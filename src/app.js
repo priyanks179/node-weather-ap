@@ -6,6 +6,7 @@ const forecast = require('./utils/forecast')
 
 
 const app = express()
+const port = process.env.port || 3000 //heroku will change port dynamically
 
 //define path for express config
 const pubDirPath = path.join(__dirname, '../public')
@@ -66,6 +67,6 @@ app.get('*', (req, res)=>{//* is a wild char in express
 })
 
 //set up port loc where to listen from
-app.listen(3000, ()=>{
-    console.log("server is up on port 3000")
+app.listen(port, ()=>{
+    console.log(`server is up on port ${port}`)
 })
