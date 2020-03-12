@@ -20,23 +20,24 @@ hbs.registerPartials(path.join(__dirname, '../templates/partials'))
 //setup routing info
 app.get('', (req,res) => {
     res.render('index',{
-        title: "weather app",
+        title: "Weather App",
         name:"priyank"
     })
 })
 
-app.get('/help', (req, res)=>{
-    res.render('help',{
-        title: "Help Page",
-        name: "Aus"
-    })
-})
+// app.get('/help', (req, res)=>{
+//     res.render('help',{
+//         title: "Help Page",
+//         name: "Priyank"
+//     })
+// })
 app.get('/about', (req, res)=>{
     res.render('about',{
         title: "About Page",
-        name: "indico"
+        name: "Priyank",
+        content: "This is highly scalable weather app."
     })
-})   
+})
 
 
 app.get('/weather', (req, res)=>{
@@ -62,7 +63,8 @@ app.get('/weather', (req, res)=>{
 app.get('*', (req, res)=>{//* is a wild char in express 
     res.render("404",{
         title:"404",
-        errorMessage:"Page do not exist"
+        errorMessage:"Page do not exist",
+        name: "Priyank"
     })
 })
 
